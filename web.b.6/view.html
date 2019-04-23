@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Learning html/template Actions</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>{{"Name"}}</td>
+                <td>: {{.Name}}</td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                {{$gender := .Gender}}
+                <td style="text-transform: capitalize">
+                    : {{$gender}} 
+                </td>
+            </tr>
+
+            <tr>
+                <td>Hobbies</td>
+                <td>
+                    : {{range $index, $elem := .Hobbies}}
+                        {{$elem}},
+                    {{end}}
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
